@@ -1,2 +1,2 @@
-# zakayo.ke
-Repo for zakayo.ke website
+# zakayo
+Repo for zakayo website
