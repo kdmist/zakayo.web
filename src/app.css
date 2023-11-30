@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+	scroll-behavior: smooth;
+}
+
+.poppins {
+	font-family: 'Poppins', sans-serif;
+}
+
+/* .bg-main {
+	background: url('images/BG.png');
+	background-size: cover;
+	background-position: center;
+} */
