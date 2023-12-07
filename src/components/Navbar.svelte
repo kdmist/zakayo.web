@@ -46,7 +46,7 @@
 							<li
 								class="mr-14 font-medium transition ease-in-out duration-150 hover:text-red-400 hover:underline tracking-tight"
 							>
-								<a href="/">Blogs</a>
+								<a href="/blogs">Blogs</a>
 							</li>
 							<li
 								class="font-medium transition ease-in-out duration-150 hover:text-red-400 hover:underline tracking-tight"
@@ -139,7 +139,7 @@
 							<li
 								class="mb-12 font-medium transition ease-in-out duration-150 hover:text-red-400 hover:underline tracking-tight"
 							>
-								<a href="/">Blogs</a>
+								<a href="/blogs">Blogs</a>
 							</li>
 							<li
 								class="font-medium transition ease-in-out duration-150 hover:text-red-400 hover:underline tracking-tight"
