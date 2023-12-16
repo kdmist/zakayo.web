@@ -41,7 +41,7 @@
 							<li
 								class="mr-14 font-medium transition ease-in-out duration-150 hover:text-red-400 hover:underline tracking-tight"
 							>
-								<a href="/">About</a>
+								<a href="/about">About</a>
 							</li>
 							<li
 								class="mr-14 font-medium transition ease-in-out duration-150 hover:text-red-400 hover:underline tracking-tight"
@@ -134,7 +134,7 @@
 							<li
 								class="mb-12 font-medium transition ease-in-out duration-150 hover:text-red-400 hover:underline tracking-tight"
 							>
-								<a href="/">About</a>
+								<a href="/about">About</a>
 							</li>
 							<li
 								class="mb-12 font-medium transition ease-in-out duration-150 hover:text-red-400 hover:underline tracking-tight"

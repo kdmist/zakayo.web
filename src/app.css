@@ -10,6 +10,10 @@ html {
 	font-family: 'Poppins', sans-serif;
 }
 
+.serif-4 {
+	font-family: 'Source Serif 4', serif;
+}
+
 /* .bg-main {
 	background: url('images/BG.png');
 	background-size: cover;
