@@ -1,25 +1,7 @@
 <script>
-	import { onMount } from 'svelte';
 
 	export let blog;
 
-	let charLimit = 153;
-
-	onMount(() => {
-		// Adjust the character limit based on the screen width
-		if (window.innerWidth <= 768) {
-			charLimit = 90;
-		}
-	});
-
-	// Listen for window resize events to dynamically adjust the character limit
-	window.addEventListener('resize', () => {
-		if (window.innerWidth <= 768) {
-			charLimit = 90;
-		} else {
-			charLimit = 153;
-		}
-	});
 </script>
 
 <div class="w-full my-5 px-3">
@@ -62,7 +44,9 @@
 
 				<div>
 					<p class="poppins my-3 text-sm md:text-base md:w-[80%] text-gray-700">
-						{blog.description.slice(0, charLimit)}...
+
+						{blog.description.slice(0, 153)}...
+
 					</p>
 				</div>
 			</div>
