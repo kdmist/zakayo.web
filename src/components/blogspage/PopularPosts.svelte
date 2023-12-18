@@ -1,30 +1,22 @@
-<script>
+<script lang="ts">
 	import PopularPostCard from './PopularPostCard.svelte';
+	import { onMount } from 'svelte';
+	import axios, { AxiosError } from 'axios';
 
-	let popularBlogs = [
-		{
-			image: 'images/blogs/tax.png',
-			title: 'What is Tax?',
-			date: '22/10/2023'
-		},
-		{
-			image: 'images/blogs/image.jpg',
-			title: 'How To Pay Taxes?',
-			date: '22/10/2023'
-		},
+	export let currentPath: string;
 
-		{
-			image: 'images/blogs/image2.jpg',
-			title: 'Register New KRA Pin?',
-			date: '22/10/2023'
-		},
+	let popularBlogs: Array<any> = [];
+	let error: AxiosError | null = null;
 
-		{
-			image: 'images/blogs/image1.jpg',
-			title: 'Changes in Tax Laws',
-			date: '22/10/2023'
+	onMount(async () => {
+		try {
+			const res = await axios.get('http://localhost:1337/api/blogs?populate=*');
+			popularBlogs = res.data.data;
+		} catch (e) {
+			error = e as AxiosError;
+			console.log(e);
 		}
-	];
+	});
 </script>
 
 <div class="mb-6 py-4 md:px-6 px-2 rounded-xl bg-white">
@@ -36,9 +28,13 @@
 		</h1>
 	</div>
 
-	<div class="">
-		{#each popularBlogs as popularBlog (popularBlog.title)}
-			<PopularPostCard {popularBlog} />
-		{/each}
-	</div>
+	{#if error !== null}
+		<p>Error: {error.message}</p>
+	{:else}
+		<div class="">
+			{#each popularBlogs as popularBlog (popularBlog.id)}
+				<PopularPostCard {popularBlog} {currentPath} />
+			{/each}
+		</div>
+	{/if}
 </div>

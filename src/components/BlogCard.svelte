@@ -1,7 +1,7 @@
 <script lang="ts">
 	export let blog: any;
 
-	console.log('This is what is passed to card', blog);
+	// console.log('This is what is passed to card', blog);
 	const webUrl = 'http://localhost:1337';
 
 	const pathToBlog = 'blogs/';
@@ -16,7 +16,7 @@
 					src={webUrl + blog.attributes.media.data.attributes.url}
 					alt=""
 				/>
-				<img class="w-16 absolute -bottom-7 left-6 rounded-full" src="images/calendar.jpg" alt="" />
+				<img class="w-16 absolute -bottom-7 left-6 rounded-full" src="calendar.jpg" alt="" />
 			</div>
 			<div class="py-4 px-4">
 				<p class="text-sm poppins font-semibold my-3 text-red-500">• {blog.attributes.category}</p>

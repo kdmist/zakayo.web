@@ -11,7 +11,7 @@
 			const res = await axios.get('http://localhost:1337/api/blogs?populate=*');
 			blogs = res.data.data;
 
-			console.log('Repsonse data is:', blogs);
+			// console.log('Repsonse data is:', blogs);
 		} catch (e) {
 			error = e as AxiosError;
 			console.log(e);

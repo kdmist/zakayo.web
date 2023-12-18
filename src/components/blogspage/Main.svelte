@@ -1,7 +1,11 @@
-<script>
+<script lang="ts">
 	import Footer from '../Footer.svelte';
 	import BlogSideBar from './BlogSideBar.svelte';
 	import BlogsContainer from './BlogsContainer.svelte';
+
+	let currentPath: string;
+
+	currentPath = '/blogs/';
 </script>
 
 <div class="max-w-4xl mx-auto">
@@ -25,7 +29,7 @@
 	</div>
 
 	<div class="lg:w-2/6 w-full">
-		<BlogSideBar />
+		<BlogSideBar {currentPath} />
 	</div>
 </div>
 

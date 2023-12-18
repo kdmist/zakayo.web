@@ -25,7 +25,7 @@
 
 		<div class="lg:w-1/2 w-full lg:-mt-24">
 			<img
-				src="images/banner1.png"
+				src="banner1.png"
 				alt="banner-about"
 				class="transition ease-in-out duration-150 hover:scale-105 hover:rotate-12 mx-auto lg:mx-0"
 			/>
@@ -35,7 +35,7 @@
 	<div class="flex lg:flex-row flex-col">
 		<div class="lg:w-1/2 w-full lg:-mt-16 order-last lg:order-first">
 			<img
-				src="images/banner2.png"
+				src="banner2.png"
 				alt="banner-about"
 				class="transition ease-in-out duration-150 hover:scale-105 hover:-rotate-12 mx-auto lg:mx-0"
 			/>

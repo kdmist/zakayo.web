@@ -23,5 +23,5 @@
 			Your Passport to Financial Empowerment
 		</h1>
 	</div>
-	<img src="images/line.png" class="mx-auto w-[20%]" alt="line" />
+	<img src="line.png" class="mx-auto w-[20%]" alt="line" />
 </div>

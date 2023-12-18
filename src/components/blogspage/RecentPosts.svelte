@@ -1,30 +1,22 @@
-<script>
+<script lang="ts">
 	import RecentPostCard from './RecentPostCard.svelte';
+	import { onMount } from 'svelte';
+	import axios, { AxiosError } from 'axios';
 
-	let recentBlogs = [
-		{
-			image: 'images/blogs/post.jpg',
-			title: 'Get Tax Certificate?',
-			date: '22/10/2023'
-		},
-		{
-			image: 'images/blogs/post2.jpg',
-			title: ' Tax for Businesses?',
-			date: '22/10/2023'
-		},
+	export let currentPath: string;
 
-		{
-			image: 'images/blogs/post3.jpg',
-			title: ' Tax Compliance?',
-			date: '22/10/2023'
-		},
+	let recentBlogs: Array<any> = [];
+	let error: AxiosError | null = null;
 
-		{
-			image: 'images/blogs/post4.jpg',
-			title: ' Tax Obligations?',
-			date: '22/10/2023'
+	onMount(async () => {
+		try {
+			const res = await axios.get('http://localhost:1337/api/blogs?populate=*');
+			recentBlogs = res.data.data;
+		} catch (e) {
+			error = e as AxiosError;
+			console.log(e);
 		}
-	];
+	});
 </script>
 
 <div class="mb-6 py-4 md:px-6 px-2 rounded-xl bg-white">
@@ -36,9 +28,13 @@
 		</h1>
 	</div>
 
-	<div class="">
-		{#each recentBlogs as recentBlog (recentBlog.title)}
-			<RecentPostCard {recentBlog} />
-		{/each}
-	</div>
+	{#if error !== null}
+		<p>Error: {error.message}</p>
+	{:else}
+		<div class="">
+			{#each recentBlogs as recentBlog (recentBlog.id)}
+				<RecentPostCard {recentBlog} {currentPath} />
+			{/each}
+		</div>
+	{/if}
 </div>
