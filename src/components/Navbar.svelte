@@ -24,7 +24,7 @@
 				<div class="flex flex-wrap items-center">
 					<div class="w-auto pr-2">
 						<a href="/">
-							<img src="images/logo.png" class="w-48" alt="" />
+							<img src="logo.png" class="w-48" alt="" />
 						</a>
 					</div>
 				</div>
@@ -120,7 +120,7 @@
 						</div>
 						<div class="w-auto p-2 mt-10">
 							<a class="inline-block" href="/">
-								<img src="images/logo.png" class="w-40" alt="" />
+								<img src="logo.png" class="w-40" alt="" />
 							</a>
 						</div>
 					</div>

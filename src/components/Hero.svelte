@@ -4,7 +4,7 @@
 			<div class="lg:max-w-8xl w-full mx-auto">
 				<div class="lg:flex justify-center">
 					<div>
-						<img src="images/avatar.png" class="mx-auto md:mx-0" alt="avatar" />
+						<img src="avatar.png" class="mx-auto md:mx-0" alt="avatar" />
 					</div>
 					<div class="lg:text-7xl md:text-5xl sm:text-4xl text-2xl text-center">
 						<h1
@@ -27,13 +27,13 @@
 
 				<div class="md:grid grid-cols-10 gap-3">
 					<div class="md:block hidden col-span-2">
-						<img src="images/girl-left.png" alt="girl-left" />
+						<img src="girl-left.png" alt="girl-left" />
 					</div>
 					<div class="col-span-5">
-						<img src="images/girl.png" class="ml-auto mt-5 md:mt-0" alt="girl-left" />
+						<img src="girl.png" class="ml-auto mt-5 md:mt-0" alt="girl-left" />
 					</div>
 					<div class="md:block hidden col-span-3">
-						<img src="images/right.png" alt="girl-left" />
+						<img src="right.png" alt="girl-left" />
 					</div>
 				</div>
 			</div>
