@@ -6,9 +6,11 @@
 	let blogs: Array<any> = [];
 	let error: AxiosError | null = null;
 
+	const apiUrl = import.meta.env.VITE_API_URL_BLOGS;
+
 	onMount(async () => {
 		try {
-			const res = await axios.get('http://localhost:1337/api/blogs?populate=*');
+			const res = await axios.get(apiUrl);
 			blogs = res.data.data;
 
 			// console.log('Repsonse data is:', blogs);

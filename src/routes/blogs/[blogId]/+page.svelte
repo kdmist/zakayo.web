@@ -12,6 +12,10 @@
 	let blogDetail: any = {};
 	let error: AxiosError | null = null;
 
+	const singleBlogApiUrl = import.meta.env.VITE_API_URL_SINGLE_BLOG;
+
+	const baseApiUrl = import.meta.env.VITE_BASE_API_URL;
+
 	let blogImage: any = '';
 
 	let currentPath: string;
@@ -20,9 +24,9 @@
 
 	onMount(async () => {
 		try {
-			const res = await axios.get('http://localhost:1337/api/blogs/' + blogId + '?populate=*');
+			const res = await axios.get(`${singleBlogApiUrl}${blogId}?populate=*`);
 
-			const webUrl = 'http://localhost:1337';
+			const webUrl = baseApiUrl;
 			blogImage = webUrl + res.data.data.attributes.media.data.attributes.url;
 
 			// console.log("Data API Response:",blogImage)

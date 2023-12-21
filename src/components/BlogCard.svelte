@@ -2,7 +2,9 @@
 	export let blog: any;
 
 	// console.log('This is what is passed to card', blog);
-	const webUrl = 'http://localhost:1337';
+
+	const baseApiUrl = import.meta.env.VITE_BASE_API_URL;
+	const webUrl = baseApiUrl;
 
 	const pathToBlog = 'blogs/';
 </script>

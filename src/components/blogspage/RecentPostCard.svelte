@@ -1,7 +1,8 @@
 <script lang="ts">
 	export let recentBlog: any;
 
-	const webUrl = 'http://localhost:1337';
+	const baseApiUrl = import.meta.env.VITE_BASE_API_URL;
+	const webUrl = baseApiUrl;
 
 	export let currentPath: string;
 </script>

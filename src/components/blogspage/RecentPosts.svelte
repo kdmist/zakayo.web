@@ -5,12 +5,14 @@
 
 	export let currentPath: string;
 
+	const apiUrl = import.meta.env.VITE_API_URL_BLOGS;
+
 	let recentBlogs: Array<any> = [];
 	let error: AxiosError | null = null;
 
 	onMount(async () => {
 		try {
-			const res = await axios.get('http://localhost:1337/api/blogs?populate=*');
+			const res = await axios.get(apiUrl);
 			recentBlogs = res.data.data;
 		} catch (e) {
 			error = e as AxiosError;
