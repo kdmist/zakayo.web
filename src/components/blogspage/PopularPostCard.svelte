@@ -1,5 +1,6 @@
 <script lang="ts">
-	export let popularBlog: any;
+	import type { Blog } from '$lib/types/Blog.interface';
+	export let popularBlog: Blog;
 
 	// console.log('This is what is passed to card', blog);
 	const baseApiUrl = import.meta.env.VITE_BASE_API_URL;

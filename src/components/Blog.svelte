@@ -3,7 +3,9 @@
 	import { onMount } from 'svelte';
 	import axios, { AxiosError } from 'axios';
 
-	let blogs: Array<any> = [];
+	import type { Blog } from '$lib/types/Blog.interface';
+
+	let blogs: Array<Blog> = [];
 	let error: AxiosError | null = null;
 
 	const apiUrl = import.meta.env.VITE_API_URL_BLOGS;

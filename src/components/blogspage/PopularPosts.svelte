@@ -2,12 +2,13 @@
 	import PopularPostCard from './PopularPostCard.svelte';
 	import { onMount } from 'svelte';
 	import axios, { AxiosError } from 'axios';
+	import type { Blog } from '$lib/types/Blog.interface';
 
 	export let currentPath: string;
 
 	const apiUrl = import.meta.env.VITE_API_URL_BLOGS;
 
-	let popularBlogs: Array<any> = [];
+	let popularBlogs: Array<Blog> = [];
 	let error: AxiosError | null = null;
 
 	onMount(async () => {

@@ -1,5 +1,6 @@
 <script lang="ts">
-	export let blog: any;
+	import type { Blog } from '$lib/types/Blog.interface';
+	export let blog: Blog;
 
 	// console.log('This is what is passed to card', blog);
 

@@ -1,5 +1,6 @@
 <script lang="ts">
-	export let recentBlog: any;
+	import type { Blog } from '$lib/types/Blog.interface';
+	export let recentBlog: Blog;
 
 	const baseApiUrl = import.meta.env.VITE_BASE_API_URL;
 	const webUrl = baseApiUrl;

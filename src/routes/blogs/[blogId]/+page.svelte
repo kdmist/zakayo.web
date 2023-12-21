@@ -8,13 +8,15 @@
 
 	import Footer from '../../../components/Footer.svelte';
 	import BlogSideBar from '../../../components/blogspage/BlogSideBar.svelte';
+	import type { Blog } from '$lib/types/Blog.interface';
 
-	let blogDetail: any = {};
+	let blogDetail: Partial<Blog> = {};
 	let error: AxiosError | null = null;
 
 	const singleBlogApiUrl = import.meta.env.VITE_API_URL_SINGLE_BLOG;
 
 	const baseApiUrl = import.meta.env.VITE_BASE_API_URL;
+	const webUrl = baseApiUrl;
 
 	let blogImage: any = '';
 
@@ -26,11 +28,11 @@
 		try {
 			const res = await axios.get(`${singleBlogApiUrl}${blogId}?populate=*`);
 
-			const webUrl = baseApiUrl;
 			blogImage = webUrl + res.data.data.attributes.media.data.attributes.url;
 
-			// console.log("Data API Response:",blogImage)
-			blogDetail = res.data.data.attributes;
+			blogDetail = res.data.data;
+
+			// console.log('Data API Response:', blogDetail);
 		} catch (e) {
 			error = e as AxiosError;
 			console.log(e);
@@ -46,7 +48,7 @@
 			<div class=" mb-6 mt-8">
 				<img
 					class="w-full rounded-3xl transition ease-in-out duration-150 hover:scale-90"
-					src={blogImage}
+					src={webUrl + blogDetail.attributes?.media?.data.attributes.url}
 					alt=""
 				/>
 			</div>
@@ -55,20 +57,20 @@
 					<div class="md:flex justify-between items-center mt-5 poppins">
 						<div class="flex items-center">
 							<p class=" poppins text-sm md:text-base font-semibold my-3 text-red-500">
-								• {blogDetail.category}
+								• {blogDetail.attributes?.category}
 							</p>
 							<div class="flex items-center ml-10">
 								<i class="fas fa-user mr-2 text-indigo-500" />
 								<div class="font-poppins text-sm text-neutral-500 text-opacity-100 font-semibold">
-									{blogDetail.author}
+									{blogDetail.attributes?.author}
 								</div>
 							</div>
 						</div>
 						<div class="flex items-center">
 							<i class="fas fa-calendar mr-2 text-indigo-500" />
 							<div class="font-poppins text-sm text-neutral-500 text-opacity-100 font-semibold">
-								{#if blogDetail.createdAt}
-									{blogDetail.createdAt.slice(0, 10)}
+								{#if blogDetail.attributes?.createdAt}
+									{blogDetail.attributes?.createdAt.slice(0, 10)}
 								{/if}
 							</div>
 						</div>
@@ -77,12 +79,12 @@
 					<h3
 						class="poppins md:mt-0 mt-3 transition ease-in-out duration-150 text-xl lg:text-2xl text-zinc-800 text-opacity-100 font-semibold"
 					>
-						{blogDetail.title}
+						{blogDetail.attributes?.title}
 					</h3>
 
 					<div>
 						<p class="poppins my-3 text-sm md:text-base text-gray-700">
-							<SvelteMarkdown source={blogDetail.description} />
+							<SvelteMarkdown source={blogDetail.attributes?.description} />
 						</p>
 					</div>
 				</div>
