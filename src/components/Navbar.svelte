@@ -51,7 +51,7 @@
 							<li
 								class="font-medium transition ease-in-out duration-150 hover:text-red-400 hover:underline tracking-tight"
 							>
-								<a href="/">Contact Us</a>
+								<a href="/contact">Contact Us</a>
 							</li>
 						</ul>
 					</div>
@@ -144,7 +144,7 @@
 							<li
 								class="font-medium transition ease-in-out duration-150 hover:text-red-400 hover:underline tracking-tight"
 							>
-								<a href="/">Contact Us</a>
+								<a href="/contact">Contact Us</a>
 							</li>
 						</ul>
 					</div>
